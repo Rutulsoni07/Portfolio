@@ -63,49 +63,55 @@ export default function Contact() {
         feedback, please use the form below.
       </motion.p>
 
-      <form className="max-w-2xl mx-auto" onSubmit={onSubmit}>
-        <motion.div
-          className="grid md:grid-cols-2 sm:grid-cols-1 gap-6 mb-8 mt-10"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          <input
+      <motion.form
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.9, delay: 0.5 }}
+        className="max-w-2xl mx-auto"
+        onSubmit={onSubmit}
+      >
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-6 mb-8 mt-10">
+          <motion.input
             type="text"
             placeholder="Enter your name"
             className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white "
             required
             name="name"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
           />
-          <input
+          <motion.input
             type="email"
             placeholder="Enter your email"
             className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             required
             name="email"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
           />
-        </motion.div>
+        </div>
         <motion.textarea
           rows={6}
           placeholder="Enter your message..."
           className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
           name="message"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 1.3 }}
         ></motion.textarea>
 
         <motion.button
           type="Submit"
           className="py-3 mt-3 px-8 w-max flex items-center justify-between gap-2 cursor-pointer bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
+          whileHover={{scale:1.5}}
+          transition={{duration:0.3}}
         >
           Submit Now
           <Image src={assets.right_arrow_white} alt="." className="w-4" />
         </motion.button>
-      </form>
+      </motion.form>
       <p className="mt-4">{result}</p>
     </div>
   );
