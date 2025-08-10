@@ -105,7 +105,7 @@ export default function Contact() {
         <motion.button
           type="Submit"
           className="py-3 mt-3 px-8 w-max flex items-center justify-between gap-2 cursor-pointer bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
-          whileHover={{scale:1.5}}
+          whileHover={{scale:1.1}}
           transition={{duration:0.3}}
         >
           Submit Now
